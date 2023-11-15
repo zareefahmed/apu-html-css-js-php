@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Log Example</title>
+</head>
+<body>
+    
+    <script>
+       console.log("I am in your file");
+
+       function doSum(a,b)
+       {
+        // String
+        //Number
+        // Array. List
+        //a=prompt("What is your first number?");
+        //b=prompt("What is your second number?");
+ a=document.getElementById("firstnumber").value;
+ b=document.getElementById("secondnumber").value;
+ result=document.getElementById("result");
+ //console.log(firstnumber);
+        sum=parseInt(a)+parseInt(b);
+        result.innerHTML=sum;
+        console.log("Sum of the numers is : ")
+        console.log(sum)
+        //return a+b;
+       }
+
+      
+    </script>
+
+
+    <form>
+First Number : <input type="text" id="firstnumber">
+<br>
+Second Number : <input type="text" id="secondnumber">
+
+
+    </form>
+    <button onclick="doSum()"> Do Sum</button>
+
+    <br>
+    <br>
+    <br>
+
+    Result :: <span id="result"></span>
+    
+</body>
+</html>
