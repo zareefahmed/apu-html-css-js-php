@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to CSS</title>
+    <style>
+        /* CSS goes here */
+        p {
+            color: red;
+            font-size: 20px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+        a { text-decoration: none;}
+        a:hover {
+            text-decoration: underline;
+            color: green;
+            font-size: 18px;
+        }
+
+        .highlight-letter::first-letter {
+            font-size: 2em;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a red paragraph.</p>
+    <p class="highlight">This paragraph has a yellow background.</p>
+
+    <p class="highlight-letter">Once upon a time in a faraway land...</p>
+    <a href=""> I am an Anchor Tag</a>
+</body>
+</html>
