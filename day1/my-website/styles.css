@@ -1,0 +1,70 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 1rem;
+}
+
+.sidebar h2 {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin: 8px 0;
+}
+
+.sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #bbb;
+}
+
+.content {
+    flex: 3;
+    padding: 1rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}

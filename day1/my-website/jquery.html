@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Examples</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Your jQuery code here
+
+            $('#mybutton').click(function() {
+               // alert('Button was clicked!');
+               doSum();
+            });
+        });
+
+        function doSum(a, b) {
+
+            a = $("#firstnumber").val();
+            //console.log(a);
+            b = $("#secondnumber").val();
+            result = $("#result");
+            sum = parseInt(a) + parseInt(b);
+            result.html(sum);
+        }
+
+
+    </script>
+
+
+
+    <form>
+        First Number : <input type="text" id="firstnumber">
+        <br>
+        Second Number : <input type="text" id="secondnumber">
+
+
+    </form>
+    <button id="mybutton"> Do Sum</button>
+
+    <br>
+    <br>
+    <br>
+
+    Result :: <span id="result"></span>
+
+</body>
+
+</html>

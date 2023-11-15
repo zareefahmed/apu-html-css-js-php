@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Example</title>
+    <link rel="stylesheet" href="styles_animation.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Your jQuery code here
+
+            $('#movebutton').click(function() {
+               circle=$(".circle");
+            //    console.log(circle);
+      
+                $(".circle").css("background-color","red");
+                currentvalue=$(".circle").css("left");
+                currentvalue=parseInt(currentvalue);
+                newvalue=currentvalue+50;
+            //    console.log();
+                $(".circle").css("left",newvalue+"px");
+
+        console.log("I am being called.")
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <div class="animation-container">
+        <div class="circle"></div>
+    </div>
+
+    <button id="movebutton">  Play with me</button>
+</body>
+</html>

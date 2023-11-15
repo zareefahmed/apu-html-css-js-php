@@ -1,0 +1,25 @@
+.animation-container {
+    width: 300px;
+    height: 100px;
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden; /* To ensure the circle doesn't overflow the container */
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 50%;  /* This makes the div a circle shape */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); /* This centers the circle vertically */
+
+    /* Animation properties */
+    transition: all 2s; /* Specifies the animation duration and property to animate */
+}
+
+.animation-container:hover .circle {
+    left: calc(100% - 50px); /* On hover, move the circle to the right end of the container */
+}
