@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Assignment Day 2</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    </head>
+    
+    <body>
+        <hr>
+        <h1>Assignment 2</h1>
+        <li>Ceate a javascript class with the following methods</li>
+        <li>Post</li>
+        <li>Get</li>
+        <li>You should also create a constructor that should take a url and open a connection to it using http request (refer to remote request)</li>
+        <li>The object of this class must be able to make get and post</li>
+        <script>
+            class Connection
+            {
+                constructor(baseurl)
+                {
+                    this.baseurl = baseurl;
+                }
+
+                Get(resource)
+                {
+                    $.ajax({
+                    url: this.baseurl+resource,
+                    type: 'GET',
+                    success: function(data) {
+                        $('#response').val(JSON.stringify(data, null, 2));
+                    }
+                    });
+
+                    this.name="Zareef";
+                }
+                Post(resource) 
+                {
+                    $.ajax({
+                    url: this.baseurl+resource,
+                    type: 'POST',
+                    contentType: 'application/json; charset=UTF-8',
+                    data: JSON.stringify({
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1
+                }),
+                    success: function(response) 
+                    {
+                        $('#response').val(JSON.stringify(response, null, 2));
+                    }
+                });
+                console.log(this.name);
+                }
+            }
+
+
+            var connection = new Connection('https://jsonplaceholder.typicode.com');
+            
+
+
+            function GETRequest()
+            {
+                connection.Get("/users");
+            
+            }
+        
+            function POSTRequest()
+            {
+                connection.Post("/posts");
+            }  
+        </script>
+
+        <br>
+        
+        
+        
+        <button onclick="GETRequest()">GET Request</button>
+        <button onclick="POSTRequest()">POST Request</button>
+        <textarea id="response" rows="40" cols="70" style="margin-top: 20px; display: block;"></textarea>
+    
+    </body>
+
+</html>
+
+
+

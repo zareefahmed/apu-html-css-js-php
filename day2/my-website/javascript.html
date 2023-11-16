@@ -12,7 +12,44 @@
 </scipt>
 
 <div id="sample"> I am Sample</div>
+<!--
 <script src="script.js?v=1"></script>
+-->
+<script>
+
+    function getRandomNumber(start, end){
+       // console.log(start);
+       // console.log(end);
+        givennumber=parseInt(Math.random()*100);
+
+ while(isInRange(givennumber,start,end))
+ {
+    console.log(givennumber);
+    return givennumber;
+    break;
+  
+ }
+      }
+
+    function isInRange(number, start, end){
+  result=false;
+
+  if(number>=start && number<=end)
+  {
+    result=true;
+  }
+  
+  //console.log(result);
+
+  return result;
+    }
+
+
+</script>
+
+
+<button onclick="getRandomNumber(5,80)"> Click Me</button>
+<button onclick="isInRange(5,5,50)"> Click Me</button>
 
 </body>
 </html>
