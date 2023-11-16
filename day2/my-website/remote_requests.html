@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest Demo</title>
+</head>
+<body>
+
+<button onclick="makeGETRequest()">GET Request</button>
+<button onclick="makePOSTRequest()">POST Request</button>
+<button onclick="makePUTRequest()">PUT Request</button>
+<button onclick="makeDELETERequest()">DELETE Request</button>
+
+<textarea id="response" rows="40" cols="80" style="margin-top:20px;display:block"></textarea>
+
+<script>
+    function makeGETRequest() {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
+        xhr.onreadystatechange = function() {
+           // console.log(xhr);
+
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                document.getElementById("response").value = JSON.stringify(data, null, 2);
+            }
+        };
+
+        xhr.send();
+    }
+
+    function makePOSTRequest() {
+        var xhr = new XMLHttpRequest();
+        var data = {
+            title: 'foo',
+            body: 'bar',
+            userId: 1
+        };
+
+        xhr.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);
+        xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 201) {
+                var response = JSON.parse(xhr.responseText);
+                document.getElementById("response").value = JSON.stringify(response, null, 2);
+            }
+        };
+
+        xhr.send(JSON.stringify(data));
+    }
+
+    function makePUTRequest() {
+        var xhr = new XMLHttpRequest();
+        var data = {
+            id: 1,
+            title: 'updated title',
+            body: 'updated body',
+            userId: 1
+        };
+
+        xhr.open('PUT', 'https://jsonplaceholder.typicode.com/posts/1', true);
+        xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                document.getElementById("response").value = JSON.stringify(response, null, 2);
+            }
+        };
+
+        xhr.send(JSON.stringify(data));
+    }
+
+    function makeDELETERequest() {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('DELETE', 'https://jsonplaceholder.typicode.com/posts/1', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                document.getElementById("response").value = "Successfully deleted!";
+            }
+        };
+
+        xhr.send();
+    }
+</script>
+
+</body>
+</html>

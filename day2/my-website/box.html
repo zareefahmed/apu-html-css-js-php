@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOX Model</title>
+</head>
+
+<style>
+    #box1 {
+        margin-bottom:100px;
+        padding:25px;
+        border:5px solid black;
+        background-color: red; /** << This Line */
+        font-size: 18px;
+    }
+
+    #box2 {
+        margin:10px;
+        padding:45px;
+        border:5px solid black;
+        background-color: green;
+        font-size: 18px;
+    }
+</style>
+<body>
+    <div id="box1"> I am BOX 1</div>
+    <div id="box2"> I am BOX 2 </div>
+<button onclick="changeStyle()"> Change Styles</button>
+    <script>
+        function changeStyle()
+        {
+            box1= document.getElementById("box1");
+            box2= document.getElementById("box2");
+              box1.style.backgroundColor="yellow"; /** << This Line */
+              box1.style.fontSize="30px";
+
+
+        }
+    </script>
+</body>
+</html>
