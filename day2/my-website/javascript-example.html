@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Example</title>
+</head>
+<body>
+    
+
+    <input type="text" id="mytext" name="mytext">
+
+    <button onclick="myFunction()"> Click Me</button>
+
+    <script>
+
+        function myFunction()
+        {
+            mytext=document.getElementById("mytext").value;
+            result=document.getElementById("result");
+//mytext=parseInt(mytext);
+           // boolean, TRUE or FALSE
+            if(mytext=="one")
+            {
+
+console.log("I am one");
+console.log(mytext);
+
+result.innerHTML="I am one";
+}else
+            {
+ console.log("I am not one");
+ result.innerHTML="I am not one";
+            }
+           
+            // Function Body
+
+        }
+
+       // myFunction("Zareef");
+
+    </script>
+
+    <div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form with HTML5 Inputs</title>
+</head>
+<body>
+
+<form action="" method="post">
+    <!-- Text Input -->
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <!-- Email Input -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
+
+    <!-- Number Input -->
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="1" max="120"><br><br>
+
+    <!-- Range Input -->
+    <label for="rating">Rating (1-10):</label>
+    <input type="range" id="rating" name="rating" min="1" max="10"><br><br>
+
+    <!-- Date Input -->
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob"><br><br>
+
+    <!-- Color Picker -->
+    <label for="favcolor">Favorite Color:</label>
+    <input type="color" id="favcolor" name="favcolor"><br><br>
+
+    <!-- Telephone Input -->
+    <label for="tel">Phone Number:</label>
+    <input type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+
+    <!-- URL Input -->
+    <label for="website">Website:</label>
+    <input type="url" id="website" name="website"><br><br>
+
+    <!-- ... other fields from the previous example ... -->
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+
+    <!-- Reset Button -->
+    <input type="reset" value="Reset">
+</form>
+
+</body>
+</html>

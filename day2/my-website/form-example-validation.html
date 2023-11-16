@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+</head>
+<body>
+
+<form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    function isBlank(inputField) {
+        return !inputField.value || inputField.value.trim() === '';
+    }
+
+    function hasValidLength(inputField, minLength, maxLength) {
+        var length = inputField.value.length;
+        return length >= minLength && length <= maxLength;
+    }
+
+    function passwordsMatch(passwordField, confirmPasswordField) {
+        return passwordField.value === confirmPasswordField.value;
+    }
+
+    function validateForm() {
+        var nameField = document.getElementById('name');
+        var passwordField = document.getElementById('password');
+        var confirmPasswordField = document.getElementById('confirmPassword');
+        
+        if (isBlank(nameField)) {
+            alert('Name cannot be blank.');
+            return false;
+        }
+        
+        if (!hasValidLength(passwordField, 6, 12)) {
+            alert('Password must be between 6 and 12 characters.');
+            return false;
+        }
+
+        if (!passwordsMatch(passwordField, confirmPasswordField)) {
+            alert('Passwords do not match.');
+            return false;
+        }
+
+        // If all checks pass:
+        return true;
+    }
+
+    // Attaching validation to form submission:
+    var form = document.getElementById('myForm');
+    form.onsubmit = function() {
+        return validateForm();
+    };
+</script>
+
+</body>
+</html>

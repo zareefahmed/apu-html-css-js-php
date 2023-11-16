@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form</title>
+</head>
+<body>
+
+<form action="/submit" method="post">
+    <!-- Text Input -->
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+
+    <!-- Password Input -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+    <!-- Radio Buttons -->
+    Gender: 
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br><br>
+
+    <!-- Checkbox -->
+    <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+    <label for="subscribe">Subscribe to newsletter</label><br><br>
+
+    <!-- Dropdown -->
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+        <option value="usa">USA</option>
+        <option value="canada">Canada</option>
+        <option value="india">India</option>
+    </select><br><br>
+
+    <!-- Textarea -->
+    <label for="comments">Comments:</label><br>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+    <!-- File Input -->
+    <label for="file">Upload a file:</label>
+    <input type="file" id="file" name="file"><br><br>
+
+    <!-- Hidden Input -->
+    <input type="hidden" id="hiddenField" name="hiddenField" value="hiddenValue">
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+
+    <!-- Reset Button -->
+    <input type="reset" value="Reset">
+</form>
+
+</body>
+</html>

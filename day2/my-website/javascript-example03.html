@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    
+
+    <input type="text" id="mytext" name="mytext">
+
+    <button onclick="myFunction()"> Click Me</button>
+
+    <script>
+
+        function myFunction()
+        {
+            mytext=$("#mytext").val();
+            result=$("#result");
+            messages=$("#messages");
+            
+            messages.append("<br>"+mytext);
+            if(mytext=="one"){
+           result.append("<br>I am one");
+            }else{
+                result.append( "<br>I am not one");
+            }
+        }
+
+       // myFunction("Zareef");
+
+    </script>
+    <br><br><br>
+    <div id="result"></div>
+    <br><br>
+    <div id="messages"></div>
+</body>
+</html>
