@@ -9,6 +9,11 @@
             font-family: Arial, sans-serif;
             font-size: 20px;
         }
+        .mytext::first-letter {
+            font-size: 2em;
+            font-weight: bold;
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -20,8 +25,24 @@
 <button onclick="makeItalic()">Make Italic</button>
 <button onclick="underlineText()">Underline</button>
 <button onclick="addShadow()">Add Shadow</button>
+<button onclick="addColor()">Change Color</button>
+<button onclick="makeAWord()">Make A Word</button>
 
 <script>
+
+    function addColor() {
+        document.getElementById('text').style.color = 'red';
+    }
+    function makeAWord() {
+        let element = document.querySelector("#text::first-letter");
+        // TODO : Lets revisit it again.
+        element.style.color="green"  ;
+       // document.getElementById('text').("mytext")  ;
+    }
+
+
+
+
     function changeFont() {
         document.getElementById('text').style.fontFamily = 'Georgia, serif';
     }

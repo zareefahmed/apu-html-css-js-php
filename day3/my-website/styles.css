@@ -1,0 +1,28 @@
+.image-container {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid #333;
+}
+
+.manipulated-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+    /* Grayscale Filter */
+    filter: grayscale(100%);
+
+    /* Rotate the image */
+    transform: rotate(10deg);
+}
+
+.image-container:hover .manipulated-image {
+    /* Remove Grayscale Filter on hover */
+    filter: grayscale(0%);
+
+    /* Scale and Rotate the image on hover */
+    transform: scale(2.9) rotate(0deg);
+}
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tester</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #sampleBox {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 20px;
+            padding: 10px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+<div id="sampleBox">
+    This is a sample box. Click the buttons below to apply CSS properties.
+</div>
+
+<button onclick="changeBackground()">Change Background</button>
+<button onclick="toggleBorder()">Toggle Border</button>
+<button onclick="increasePadding()">Increase Padding</button>
+<button onclick="changeTextAlign()">Change Text Alignment</button>
+
+<script>
+    function changeBackground() {
+        $("#sampleBox").css("background-color", "lightblue");
+    }
+
+    function toggleBorder() {
+        let currentBorder = $("#sampleBox").css("border");
+        if (currentBorder === "20px solid rgb(0, 0, 0)") {
+            $("#sampleBox").css("border", "none");
+        } else {
+            $("#sampleBox").css("border", "20px solid black");
+        }
+    }
+
+    function increasePadding() {
+        let currentPadding = parseInt($("#sampleBox").css("padding"));
+        $("#sampleBox").css("padding", (currentPadding + 10) + "px");
+    }
+
+    function changeTextAlign() {
+        let currentAlign = $("#sampleBox").css("text-align");
+        if (currentAlign === "left") {
+            $("#sampleBox").css("text-align", "center");
+        } else {
+            $("#sampleBox").css("text-align", "left");
+        }
+    }
+</script>
+
+</body>
+</html>
