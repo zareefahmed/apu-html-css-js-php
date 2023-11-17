@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple SPA</title>
+    <style>
+        #content {
+            padding: 20px;
+        }
+        .content-default {display: none;}
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" data-page="about">About Me</a> |
+    <a href="#" data-page="contact">Contact Me</a> |
+    <a href="#" data-page="team">Team</a> |
+    <a href="#" data-page="privacy">Privacy</a> | 
+    <a href="#" data-page="suggestions">Suggestions</a>
+</nav>
+
+<div id="content">
+    <!-- Content will be loaded here -->
+</div>
+
+<script>
+    const contentDiv = document.getElementById('content');
+
+    function loadPage(page) {
+        //pagecontent=document.getElementById(page).innerHTML;
+        //contentDiv.innerHTML=pagecontent;
+        contentDiv.innerHTML=document.getElementById(page).innerHTML;
+
+      }
+
+    // Handle nav link clicks
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = e.target.getAttribute('data-page');
+            loadPage(page);
+            history.pushState({ page }, `${page} page`, `/${page}`);
+        });
+    });
+
+    // Handle back/forward browser buttons
+    window.addEventListener('popstate', (e) => {
+        if (e.state && e.state.page) {
+            loadPage(e.state.page);
+        }
+    });
+
+    // Load default page on initial load
+    loadPage('about');
+</script>
+
+<div id="contact" class="content-default">
+    <h1> Contact Page</h1>
+</div>
+<div id="about" class="content-default">
+    <h1> About Page</h1>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore qui consequuntur sequi impedit! Aut, quis quas distinctio voluptates veritatis veniam doloribus nobis! Saepe, perferendis asperiores maiores autem fugiat ea odit nisi, debitis modi maxime alias tenetur adipisci hic aspernatur, illum quae accusamus quibusdam quasi. Placeat, voluptate? Consectetur quaerat a iure, sed est modi minima libero temporibus inventore suscipit accusantium expedita beatae, nulla corrupti nostrum? Earum cum asperiores doloribus error, placeat aperiam nostrum incidunt enim adipisci ullam repellat cupiditate natus labore ducimus provident explicabo pariatur veniam! Esse, blanditiis et? Tenetur labore similique architecto perferendis explicabo enim numquam ea molestias iusto! Corporis repellendus dolorum itaque saepe libero odio unde ducimus ipsa dolorem eligendi natus totam ad magnam rem, laboriosam quod at officia facere ullam nulla eum animi inventore accusantium! Quasi omnis qui, libero amet aliquid veritatis earum recusandae. Quae doloribus accusamus nihil optio assumenda culpa, temporibus ad voluptates laudantium qui repudiandae officiis aut aspernatur atque delectus asperiores blanditiis omnis voluptatum officia animi. Nesciunt dolores illum aliquam esse ipsam expedita harum laborum voluptatibus dignissimos repudiandae! Aspernatur exercitationem quis sint ducimus ex facere maiores doloremque nisi deserunt! Repellat, numquam quam quis in illum ut minus ad perferendis. Corporis, ad veniam. Labore nemo esse unde.
+
+</div>
+<div id="team" class="content-default">
+    <h1> Team Page</h1>
+
+    <table border="1">
+        <tr><td>First Name</td><td>Last Name</td><td>Email</td><td colspan="2">Address</td><td> Status</td></tr>
+       <tr><td>Zareef</td><td>Ahmed</td><td>zareef@zareef.com</td><td>Street</td><td>City</td></tr>
+       <tr><td>First A</td><td>magni nulla nesciunt</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       <tr><td>First A</td><td>Last A</td><td>emailA@example.com</td><td>Street</td><td>City</td><td>Active</td></tr>
+       
+       </table>
+
+
+</div>
+<div id="privacy" class="content-default">
+    <h1> Privacy Page</h1>
+
+</div>
+<div id="suggestions" class="content-default">
+    <h1> Suggestions Page</h1>
+    <img src="image2.jpg">
+
+</div>
+<div id="notfound" class="content-default">
+    <h1> 404: Not Found</h1>
+
+</div>
+</body>
+</html>

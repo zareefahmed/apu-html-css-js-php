@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to ZIP Converter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <style>
+        #imagePreview img {
+            margin: 5px;
+        }
+        #downloadZip {margin-top: 50px;}
+    </style>
+</head>
+<body>
+    <input type="file" id="fileInput" multiple accept="image/*">
+    <div id="imagePreview"></div>
+
+    <button id="downloadZip">Download as ZIP</button>
+    <script src="script_zip.js"></script>
+</body>
+</html>

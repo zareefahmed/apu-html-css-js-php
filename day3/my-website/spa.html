@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple SPA</title>
+    <style>
+        #content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" data-page="about">About Me</a> |
+    <a href="#" data-page="contact">Contact Me</a> |
+    <a href="#" data-page="team">Team</a> |
+    <a href="#" data-page="privacy">Privacy</a> | 
+    <a href="#" data-page="suggestions">Suggestions</a>
+</nav>
+
+<div id="content">
+    <!-- Content will be loaded here -->
+</div>
+
+<script>
+    const contentDiv = document.getElementById('content');
+
+    function loadPage(page) {
+        switch (page) {
+            case 'about':
+                contentDiv.innerHTML = '<h1>About Me</h1><p>This is the About Me page.</p>';
+                break;
+            case 'contact':
+                contentDiv.innerHTML = '<h1>Contact Me</h1><p>This is the Contact Me page.</p>';
+                break;
+            case 'team':
+                contentDiv.innerHTML = '<h1>Team</h1><p>This is the Team page.</p>';
+                break;
+            case 'privacy':
+                contentDiv.innerHTML = '<h1>Privacy</h1><p>This is the Privacy page.</p>';
+                break;
+            case 'suggestions':
+                contentDiv.innerHTML = '<h1>Suggestions</h1><p>This is the Suggestions page.</p>';
+                break;
+            default:
+                contentDiv.innerHTML = '<h1>404</h1><p>Page not found.</p>';
+        }
+    }
+
+    // Handle nav link clicks
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = e.target.getAttribute('data-page');
+            loadPage(page);
+            history.pushState({ page }, `${page} page`, `/${page}`);
+        });
+    });
+
+    // Handle back/forward browser buttons
+    window.addEventListener('popstate', (e) => {
+        if (e.state && e.state.page) {
+            loadPage(e.state.page);
+        }
+    });
+
+    // Load default page on initial load
+    loadPage('about');
+</script>
+
+
+</body>
+</html>

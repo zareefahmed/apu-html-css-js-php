@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    class Vehicle {
+        constructor(type) {
+            this.type = type;
+        }
+    
+        describe() {
+            console.log(`This is a ${this.type}.`);
+        }
+    }
+    
+    class Bike extends Vehicle {
+        constructor(brand, model) {
+            super("Bike");
+            this.brand = brand;
+            this.model = model;
+        }
+    
+        displayDetails() {
+            console.log(`This bike is a ${this.brand} ${this.model}.`);
+        }
+    }
+    
+    let myBike = new Bike("Yamaha", "MT-07");
+    myBike.describe();       
+    myBike.displayDetails(); 
+
+</script>    
+    
+</body>
+</html>
