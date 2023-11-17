@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Users from JSONPlaceholder</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .user-table {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            width: 700px;
+        }
+        .row {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+        }
+        .cell {
+            padding: 10px;
+            flex: 1;
+            word-break: break-all;
+        }
+        .header {
+            background-color: #eee;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="user-table">
+    <div class="row header">
+        <div class="cell">ID</div>
+        <div class="cell">Name</div>
+        <div class="cell">Email</div>
+        <div class="cell">City</div>
+        <div class="cell">ZipCode</div>
+        
+        
+    </div>
+    <!-- Users will be appended here -->
+</div>
+
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: 'https://jsonplaceholder.typicode.com/users',
+            type: 'GET',
+            success: function(users) {
+                users.forEach(user => {
+                    console.log(user);
+                    const userRow = `
+                        <div class="row">
+                            <div class="cell">${user.id}</div>
+                            <div class="cell">${user.name}</div>
+                            <div class="cell">${user.email}</div>
+                        </div>
+                    `;
+                    $('.user-table').append(userRow);
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

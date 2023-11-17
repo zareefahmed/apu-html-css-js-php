@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox-based Table</title>
+    <style>
+        /* Flex Table Styles */
+        .flex-table {
+            display: flex;
+            flex-direction: column;
+            width: 80%; /* adjust as needed */
+            margin: 50px auto; /* centers the table horizontally */
+            border: 1px solid black;
+        }
+
+        .flex-row {
+            display: flex;
+        }
+
+        .flex-cell {
+            flex: 1; /* equally distribute space among cells in a row */
+            padding: 8px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .header .flex-cell {
+            font-weight: bold;
+            background-color: #e0e0e0;
+        }
+
+        /* Extra Styling for better visualization */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="flex-table">
+        <!-- Header -->
+        <div class="flex-row header">
+            <div class="flex-cell">Name</div>
+            <div class="flex-cell">Age</div>
+            <div class="flex-cell">Country</div>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="flex-row">
+            <div class="flex-cell">Alice</div>
+            <div class="flex-cell">28</div>
+            <div class="flex-cell">USA</div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="flex-row">
+            <div class="flex-cell">Bob</div>
+            <div class="flex-cell">32</div>
+            <div class="flex-cell">Canada</div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="flex-row">
+            <div class="flex-cell">Charlie</div>
+            <div class="flex-cell">24</div>
+            <div class="flex-cell">UK</div>
+        </div>
+
+        <div class="flex-row">
+            <div class="flex-cell">Charlie</div>
+            <div class="flex-cell">24</div>
+            <div class="flex-cell">UK</div>
+        </div>
+
+        <div class="flex-row">
+            <div class="flex-cell">Charlie</div>
+            <div class="flex-cell">24</div>
+            <div class="flex-cell">UK</div>
+        </div>
+    </div>
+</body>
+</html>
