@@ -1,0 +1,13 @@
+
+input {display: block; margin:10px}
+input[type="text"] {border:1px solid grey}
+input[type="submit"] {
+    color:white;
+    background-color:green;
+    border:1px solid greenyellow;
+    padding: 5px;
+    font-weight: bolder;
+    border-radius: 10%;
+
+}
+#formtitle {color:blue;font-size: 24px;font-weight: bold;}

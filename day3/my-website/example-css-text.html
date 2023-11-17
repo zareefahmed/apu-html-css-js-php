@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Styling with CSS3</title>
+    <style>
+        #text {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<p id="text">This is a sample text.</p>
+
+<button onclick="changeFont()">Change Font</button>
+<button onclick="makeBold()">Make Bold</button>
+<button onclick="makeItalic()">Make Italic</button>
+<button onclick="underlineText()">Underline</button>
+<button onclick="addShadow()">Add Shadow</button>
+
+<script>
+    function changeFont() {
+        document.getElementById('text').style.fontFamily = 'Georgia, serif';
+    }
+
+    function makeBold() {
+        document.getElementById('text').style.fontWeight = 'bold';
+    }
+
+    function makeItalic() {
+        document.getElementById('text').style.fontStyle = 'italic';
+    }
+
+    function underlineText() {
+        document.getElementById('text').style.textDecoration = 'underline';
+    }
+
+    function addShadow() {
+        document.getElementById('text').style.textShadow = '2px 2px 5px gray';
+    }
+</script>
+
+</body>
+</html>
