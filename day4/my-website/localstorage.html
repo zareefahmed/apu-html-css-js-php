@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    What is your preferred color? <input type="text" id="mycolor">
+
+    <button id="saveButton"> Save Data</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#saveButton').click(function() {
+                var mycolor = $('#mycolor').val();
+                console.log(mycolor);
+                localStorage.setItem('mycolor', mycolor);
+            });
+
+
+            $("#result").append(localStorage.getItem('mycolor'))
+        });
+    </script>
+    <br><br><br><br>
+    <div id="result">
+ Your Favourite color is : 
+
+    </div>
+</body>
+</html>

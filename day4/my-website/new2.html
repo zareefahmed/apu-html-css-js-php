@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="storage.js"></script>
+
+
+</head>
+<body>
+    <div id="content"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, architecto cupiditate consectetur nobis sapiente aut. A facere, cupiditate laudantium dolorum architecto, velit odit voluptas suscipit quo esse aliquam expedita? Inventore accusamus, magnam eos dolorum, exercitationem optio harum recusandae dignissimos debitis cum illum eveniet ratione eum sed incidunt mollitia ipsam odit. </div>
+
+<script>
+
+    function setStyle()
+    {
+        storage = new myStorage();
+        mycolor=storage.getItem("mycolor");
+        document.getElementById("content").style.color=mycolor;
+        console.log(mycolor);
+    }
+    setStyle();
+</script>
+</body>
+</html>
