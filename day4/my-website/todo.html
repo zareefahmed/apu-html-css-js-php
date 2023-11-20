@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List SPA with jQuery</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        #todoList {
+            list-style-type: none;
+            padding: 0;
+        }
+        .todoItem {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: -1px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type="text" id="todoInput" placeholder="Enter a new todo...">
+    <button id="addTodoBtn">Add</button>
+    <ul id="todoList"></ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="storage.js"></script>
+    <script src="todo.js"></script>
+</body>
+</html>

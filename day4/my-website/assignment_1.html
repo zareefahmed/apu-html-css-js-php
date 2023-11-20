@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="storage.js"></script>
+<script>
+
+    function saveData()
+    {
+
+        myname=document.getElementById("myname").value;
+        mycolor=document.getElementById("mycolor").value;
+        mystyle=document.getElementById("mystyle").value;
+
+        storage= new myStorage();
+        storage.setItem("myname",myname);
+        storage.setItem("mycolor",mycolor);
+        storage.setItem("mystyle",mystyle);
+        
+
+    }
+
+
+    
+</script>
+</head>
+
+
+<body>
+    <input type="text" class="text" id="myname">
+    <input type="text" class="text" id="mycolor">
+    <input type="text" class="text" id="mystyle">
+    <button onclick="saveData()"> Save Data</button>
+</body>
+</html>

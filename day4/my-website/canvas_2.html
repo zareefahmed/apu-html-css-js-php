@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Canvas Utility with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid black;"></canvas>
+<br>
+Shape: 
+<select id="shapeSelect">
+    <option value="rectangle">Rectangle</option>
+    <option value="circle">Circle</option>
+</select>
+<button id="drawShape">Draw Shape</button>
+<button id="downloadCanvas">Download Canvas</button>
+
+<script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    let shapes = [];
+    let selectedShapeIndex = null;
+    let isResizing = false;
+
+    $('#drawShape').click(function() {
+        const shapeType = $('#shapeSelect').val();
+        const shape = shapeType === 'rectangle' ? 
+            { type: 'rectangle', x: 50, y: 50, width: 100, height: 50 } :
+            { type: 'circle', x: 250, y: 250, radius: 50 };
+        shapes.push(shape);
+        redrawCanvas();
+    });
+
+    canvas.addEventListener('mousedown', function(e) {
+        const pos = getMousePos(canvas, e);
+        for (let i = shapes.length - 1; i >= 0; i--) {
+            if (isCursorInShape(pos.x, pos.y, shapes[i])) {
+                selectedShapeIndex = i;
+                isResizing = true;
+                break;
+            }
+        }
+    });
+
+    canvas.addEventListener('mousemove', function(e) {
+        if (selectedShapeIndex !== null && isResizing) {
+            const pos = getMousePos(canvas, e);
+            const shape = shapes[selectedShapeIndex];
+            if (shape.type === 'rectangle') {
+                shape.width = pos.x - shape.x;
+                shape.height = pos.y - shape.y;
+            } else {
+                shape.radius = Math.sqrt((pos.x - shape.x) ** 2 + (pos.y - shape.y) ** 2);
+            }
+            redrawCanvas();
+        }
+    });
+
+    canvas.addEventListener('mouseup', function() {
+        isResizing = false;
+        selectedShapeIndex = null;
+    });
+
+    $('#downloadCanvas').click(function() {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL();
+        link.download = 'canvas_image.png';
+        link.click();
+    });
+
+    function redrawCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        shapes.forEach(shape => {
+            if (shape.type === 'rectangle') {
+                ctx.fillStyle = 'red';
+                ctx.fillRect(shape.x, shape.y, shape.width, shape.height);
+            } else {
+                ctx.fillStyle = 'blue';
+                ctx.beginPath();
+                ctx.arc(shape.x, shape.y, shape.radius, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+        });
+    }
+
+    function isCursorInShape(x, y, shape) {
+        if (shape.type === 'rectangle') {
+            return x > shape.x && x < shape.x + shape.width && y > shape.y && y < shape.y + shape.height;
+        } else {
+            const distance = Math.sqrt((x - shape.x) ** 2 + (y - shape.y) ** 2);
+            return distance < shape.radius;
+        }
+    }
+
+    function getMousePos(canvas, evt) {
+        const rect = canvas.getBoundingClientRect();
+        return {
+            x: evt.clientX - rect.left,
+            y: evt.clientY - rect.top
+        };
+    }
+</script>
+
+</body>
+</html>

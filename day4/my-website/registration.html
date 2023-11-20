@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="indexeddb.js"></script>
+<script>
+    var myDB= new  myDb();
+  
+function getUserInfo(){
+    userid=document.getElementById("userid").value;
+    email=document.getElementById("email").value;
+    password=document.getElementById("password").value;
+    
+    let UserInfo={"userid":userid,"email":email,"password":password}
+   // console.log(UserInfo);
+    return UserInfo;
+}
+function register(){
+    myDB.prepareSave();
+}
+</script>
+</head>
+
+<body>
+    
+    Userid <input type="text" class="text" id="userid">
+    Email <input type="text" class="text" id="email">
+    Password <input type="password" class="text" id="password">
+    <button onclick="register()"> Register</button>
+
+</body>
+</html>

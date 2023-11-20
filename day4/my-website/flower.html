@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Interactive SVG with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .petal:hover {
+            fill: gold;
+        }
+    </style>
+</head>
+<body>
+
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Center of the flower -->
+    <circle cx="200" cy="200" r="40" fill="brown" />
+
+    <!-- Petals of the flower -->
+    <ellipse class="petal" cx="200" cy="100" rx="50" ry="30" fill="pink" />
+    <ellipse class="petal" cx="200" cy="300" rx="50" ry="30" fill="pink" />
+    <ellipse class="petal" cx="100" cy="200" rx="30" ry="50" fill="pink" />
+    <ellipse class="petal" cx="300" cy="200" rx="30" ry="50" fill="pink" />
+</svg>
+
+<script>
+    $(document).ready(function() {
+        $('.petal').on('click', function() {
+            let currentTransform = $(this).attr('transform') || '';
+            let rotationAngle = currentTransform.includes('rotate') ? parseInt(currentTransform.split('(')[1]) + 45 : 45;
+            $(this).attr('transform', `rotate(${rotationAngle}, 200, 200)`);
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Utility with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid black;"></canvas>
+<br>
+Choose Color <input type="color">
+<button id="drawRect">Draw Rectangle</button>
+<button id="drawCircle">Draw Circle</button>
+<button id="drawLine">Draw Line</button>
+<button id="downloadCanvas">Download Canvas</button>
+
+<script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    $('#drawRect').click(function() {
+        ctx.fillStyle = 'red';
+        ctx.fillRect(50, 50, 150, 100);
+    });
+
+    $('#drawCircle').click(function() {
+        ctx.fillStyle = 'blue';
+        ctx.beginPath();
+        ctx.arc(250, 250, 50, 0, 2 * Math.PI);
+        ctx.fill();
+    });
+
+    $('#drawLine').click(function() {
+        ctx.strokeStyle = 'green';
+        ctx.beginPath();
+        ctx.moveTo(50, 300);
+        ctx.lineTo(450, 450);
+        ctx.stroke();
+    });
+
+    $('#downloadCanvas').click(function() {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL();
+        link.download = 'canvas_image.png';
+        link.click();
+    });
+</script>
+
+</body>
+</html>

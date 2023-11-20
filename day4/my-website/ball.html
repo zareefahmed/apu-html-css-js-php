@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive SVG with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <circle id="myCircle" cx="100" cy="100" r="50" fill="blue" />
+</svg>
+
+<script>
+    $(document).ready(function() {
+        $('#myCircle').on('click', function() {
+            let colors = ['red', 'blue', 'green', 'yellow', 'purple'];
+            let currentColor = $(this).attr('fill');
+            let newColor = colors[(colors.indexOf(currentColor) + 1) % colors.length];
+            $(this).attr('fill', newColor);
+        });
+    });
+</script>
+
+</body>
+</html>

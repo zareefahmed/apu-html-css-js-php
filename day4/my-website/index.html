@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="storage.js"></script>
 
     <style>
         .contentdescription {font-weight: bolder;}
@@ -19,7 +20,9 @@
     </style>
 </head>
 <body>
-    
+    <div id="greeting"> Hello  <script> document.write(storage.getItem("myname"));</script> !</div>
+    Your favortite color is <script>document.write(storage.getItem("mycolor"));</script> and your style is <script>document.write(storage.getItem("mystyle"));</script> 
+
     <div class="title">
         This is my Test Div 
     </div>

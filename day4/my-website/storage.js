@@ -20,3 +20,6 @@ class myStorage{
         this.storageclass=storagetype;
     }
 }
+
+const  storage= new myStorage();
+//storage.setStorageType(sessionStorage);
