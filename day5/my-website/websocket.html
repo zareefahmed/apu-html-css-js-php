@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Test</title>
+</head>
+<body>
+
+<h2>WebSocket Test</h2>
+
+<button id="testButton">Test WebSocket</button>
+<br><br>
+<textarea id="output" rows="10" cols="50" readonly></textarea>
+
+<script>
+    document.getElementById('testButton').addEventListener('click', function() {
+        // Create a new WebSocket connection
+        const socket = new WebSocket('wss://socketsbay.com/wss/v2/1/demo/');
+        // Can also try wss://demos.kaazing.com/echo
+        // wss://socketsbay.com/wss/v2/1/demo/
+
+        // Append messages to the textarea
+        function appendMessage(message) {
+            const output = document.getElementById('output');
+            output.value += message + '\n';
+        }
+
+        // Connection opened
+        socket.addEventListener('open', (event) => {
+            appendMessage('WebSocket connection opened.');
+            
+            // Send a test message to the server
+            socket.send('Hello, WebSocket!');
+        });
+
+        // Listen for messages from the server
+        socket.addEventListener('message', (event) => {
+            appendMessage('Message from server: ' + event.data);
+        });
+
+        // Listen for the socket closing
+        socket.addEventListener('close', (event) => {
+            appendMessage('WebSocket connection closed.');
+        });
+
+        // Handle any errors that occur
+        socket.addEventListener('error', (error) => {
+            appendMessage('WebSocket Error: ' + error);
+        });
+    });
+</script>
+
+</body>
+</html>

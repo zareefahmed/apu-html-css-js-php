@@ -1,6 +1,11 @@
 const CACHE_NAME = 'demo-cache-v1';
 const urlsToCache = [
-    '/',
+    '/images.html',
+    '/image1.jpg',
+    '/image2.jpg',
+    '/image3.jpg',
+    '/slider.js',
+    '/slider.css',
     '/index.html',
     // Add other assets (like CSS, JS, images) here if needed
 ];
