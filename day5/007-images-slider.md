@@ -96,5 +96,3 @@ prevBtn.addEventListener('click', () => {
 ```
 
 For this code to work, you'll need to have three sample images named `sample1.jpg`, `sample2.jpg`, and `sample3.jpg` in the same directory as your HTML file. You can replace these with any images of your choice.
-
-Would you like me to fetch some sample images for you?

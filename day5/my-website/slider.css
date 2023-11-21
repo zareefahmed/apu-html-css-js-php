@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
+
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -9,7 +9,7 @@ body {
 
 .slider {
     display: flex;
-    width: 500px;
+    width: 900px;
     overflow: hidden;
 }
 
