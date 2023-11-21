@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        div {margin:200px}
+
+        .circle1 {border-radius:50%;height:200px;width: 200px;background-color: blue ;}
+        .circle2 {border-radius:50%;height:200px;width: 200px;background-color: green ;}
+        
+        .bigcircle1 {
+            border-radius:50%;
+            height:400px;width:400px;
+            transition: height 4s,width 4s;
+        }
+        
+        .bigcircle2 {
+            animation: rotateAnimation 5s infinite;
+        }
+
+        @keyframes rotateAnimation {
+            0% {width:200px;height: 200px;}
+            10% {left:10px; }
+            
+            20% {left:20px;  }
+            30% {left:30px;  }
+            
+            40% {left:40px; background-color: green; }
+            50% {width:400px;height: 400px; }
+            60% {left:60px; }
+            70% {left:70px; }
+            80% {left:80px; }
+            90% {left:90px; }
+            
+            100% {width:200px;height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="circle1">
+
+    </div>
+    <div class="circle2 bigcircle2"></div>
+
+
+
+<script>
+
+    function changeClass()
+    {
+      //  $(".circle1").removeClass("circle1");
+        $(".circle1").addClass("bigcircle1");
+    }
+  setTimeout("changeClass()", 1000 );
+  //setInterval("changeClass()", 1000);
+
+ 
+</script>
+</body>
+</html>

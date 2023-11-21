@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout function</title>
+<style>
+ #helpbox {display: none;
+
+width:100%;height: 100%;line-height: 400px;
+background-color: green;
+font-size:72px}
+
+</style>
+</head>
+<body>
+    Browse the [start:length]
+
+    <div id="helpbox" style="float:right;font-weight:bolder">
+
+        I noticed, you are looking for something very specific, can I help you?
+
+
+    </div>
+
+    <script>
+        function showHelpBox()
+        {
+            document.getElementById("helpbox").style.display="block";
+            setTimeout("hideHelpBox()",3000);
+        }
+
+        function hideHelpBox()
+        {
+            document.getElementById("helpbox").style.display="none";
+        }
+
+       // showHelpBox();
+       //setTimeout("showHelpBox()",3000);
+       setInterval("showHelpBox()",6000);
+    </script>
+    
+</body>
+</html>

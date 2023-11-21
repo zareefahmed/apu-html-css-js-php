@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.slider {
+    display: flex;
+    width: 500px;
+    overflow: hidden;
+}
+
+.slide {
+    min-width: 100%;
+    transition: all 0.5s;
+    opacity: 0;
+    position: absolute;
+}
+
+.slide.current {
+    opacity: 1;
+    position: relative;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}

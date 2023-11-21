@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Image</title>
+
+    <style>
+        @keyframes fadeInScaleUp {
+            0% {
+              opacity: 0.5;
+              filter: grayscale(10%);
+              transform: scale(0.8);
+            }
+            100% {
+              opacity: 1;
+              filter:grayscale(90%);
+              transform: scale(1);
+            }
+          }
+
+        .animated-image {
+            /* Ensure the image doesn't just pop in before the animation starts */
+            opacity: 0.5;
+            transform: scale(0.8);
+          
+            /* Animation properties */
+            animation-name: fadeInScaleUp;
+            animation-duration: 2s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+          }
+
+    </style>
+</head>
+<body>
+    <img src="image1.jpg" alt="Description" class="animated-image">
+</body>
+</html>
