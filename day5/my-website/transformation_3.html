@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformation</title>
+
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+          
+            display: block;
+            position:absolute;
+            
+            border: 2px solid black;
+        }
+        .rotate {
+            animation: rotateAnimation 5s infinite;
+        }
+
+        @keyframes rotateAnimation {
+            0% {left:0px; background-color: red;}
+            10% {left:10px; }
+            
+            20% {left:20px;  }
+            30% {left:30px;  }
+            
+            40% {left:40px; background-color: green; }
+            50% {left:50px;}
+            60% {left:60px; }
+            70% {left:70px; }
+            80% {left:80px; }
+            90% {left:90px; }
+            
+            100% {left:100px; }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="box rotate">Rotate</div>
+</body>
+</html>

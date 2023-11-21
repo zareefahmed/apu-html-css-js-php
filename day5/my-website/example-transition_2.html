@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions with Images Demo</title>
+    <style>
+        /* Basic image styling */
+        .img-container {
+            display: inline-block;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: all 0.3s; /* Default transition */
+        }
+
+        .img-container img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Hover effects */
+        .img-fade:hover img {
+            opacity: 0.7;
+        }
+
+        .img-scale:hover img {
+            transform: scale(1.5);
+        }
+
+        .img-rotate:hover img {
+            transform: rotate(15deg);
+        }
+
+        .img-translate:hover img {
+            transform: translateX(20px);
+        }
+
+    </style>
+</head>
+<body>
+    <h2>CSS Transitions with Images Demo</h2>
+
+    <div class="img-container img-fade">
+        <img src="https://images.unsplash.com/photo-1600716051809-e997e11a5d52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NDgzMDl8MHwxfHNlYXJjaHwxfHxzYW1wbGUlMjBpbWFnZXxlbnwwfHx8fDE2OTc3MzM5NzB8MA&ixlib=rb-4.0.3&q=80&w=400" alt="sliced lemon">
+    </div>
+
+    <div class="img-container img-scale">
+        <img src="https://images.unsplash.com/photo-1642480532034-362360552ccb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NDgzMDl8MHwxfHNlYXJjaHwyfHxzYW1wbGUlMjBpbWFnZXxlbnwwfHx8fDE2OTc3MzM5NzB8MA&ixlib=rb-4.0.3&q=80&w=400" alt="pantone book">
+    </div>
+
+    <div class="img-container img-rotate">
+        <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NDgzMDl8MHwxfHNlYXJjaHwzfHxzYW1wbGUlMjBpbWFnZXxlbnwwfHx8fDE2OTc3MzM5NzB8MA&ixlib=rb-4.0.3&q=80&w=400" alt="clear glass bottle">
+    </div>
+
+    <div class="img-container img-translate">
+        <img src="https://images.unsplash.com/photo-1582719201952-ea63ac1671dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NDgzMDl8MHwxfHNlYXJjaHw0fHxzYW1wbGUlMjBpbWFnZXxlbnwwfHx8fDE2OTc3MzM5NzB8MA&ixlib=rb-4.0.3&q=80&w=400" alt="man in white dress shirt">
+    </div>
+
+</body>
+</html>

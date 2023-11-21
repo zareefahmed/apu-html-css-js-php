@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformations Demo</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            transition: transform 0.5s;
+        }
+
+        .box:hover {
+            transform: rotate(45deg) scale(1.5) translateX(50px);
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+            transition: transform 0.5s;
+        }
+
+        .circle:hover {
+            transform: rotate(180deg) scale(0.5) translateY(-50px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="circle"></div>
+    </div>
+
+   
+</body>
+</html>
