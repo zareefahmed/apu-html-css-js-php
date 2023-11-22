@@ -1,1 +1,3 @@
-Day 6 
+<?php 
+print "Hello world from day 6";
+?>
