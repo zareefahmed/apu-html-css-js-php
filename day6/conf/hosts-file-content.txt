@@ -1,0 +1,10 @@
+
+
+#Please add following lines to the bottom of your hosts files at C:\Windows\System32\drivers\etc
+
+
+127.0.0.1 mysite.com 
+127.0.0.1 api.mysite.com
+127.0.0.1 day6.mysite.com
+127.0.0.1 day7.mysite.com
+127.0.0.1 day8.mysite.com

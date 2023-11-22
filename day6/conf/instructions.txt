@@ -1,0 +1,5 @@
+1. Put httpd.conf in your xampp installation folder under apache conf (Example: D:\xampp\apache\conf)
+2. Put file in extra folder to extra folder of apache conf of your xampp (Example: D:\xampp\apache\conf\extra)
+3. Follw the instructions in hosts-file-content.txt
+
+PLEAE REFER TO YOUR OWN FOLDER in extra files. Also please restart your apache after any change in configuration files.
