@@ -1,0 +1,33 @@
+Users
+    id
+    username
+    fullname
+    email
+    password
+    status
+
+Cars
+    id
+    title
+    details
+    category
+    rate
+    image
+    status
+
+Bookings
+    id
+    username
+    carid
+    bookingdate
+    rentalstartdate
+    rentalenddate
+    carrate
+    comments
+    status 
+
+/// There must be atleast two types of users 
+  1. Normal User : who should be able to browse and book the Cars
+  2. Admin Users : who should be able to add cars to the system. 
+  
+

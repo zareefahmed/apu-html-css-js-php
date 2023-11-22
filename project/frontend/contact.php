@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Rental </title>
+    <title>Car Rental : Contact Page</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -12,8 +12,8 @@
 
 <div class="container">
     <header>
-        <?php 
-include_once("header.php");        
+    <?php 
+ include("header.php");        
         ?>
     </header>
 
@@ -48,10 +48,9 @@ include_once("header.php");
     </main>
 
     <footer>
-        <?php 
- include_once("footer.php");
-        ?>
-</footer>
+        <p>&copy; 2023 Car Rental Website</p>
+        <span><a href="privacy.php"> Privacy</a> | <a href="contact.php"> Contact</a> | </span>
+    </footer>
 </div>
 
 </body>
