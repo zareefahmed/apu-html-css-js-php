@@ -16,7 +16,8 @@ $result=$db->conn->query($query);
 
 if($result->num_rows==1){
     // Login was success
-     $response=array(
+    $status="success";
+    $response=array(
         "message"=>"success","username"=>$username
      );
 
@@ -24,12 +25,12 @@ if($result->num_rows==1){
     // Login was not successful or duplicate users are in the system.
     // 0: No user found
     // 1> : Duplicate users.
-    
+    $status="failure";
     $response=array(
         "message"=>"Either username or password is wrong."
      );
 }
 
-make_response($response,"success");
+make_response($response,$status);
 exit(); 
 ?>

@@ -1,5 +1,6 @@
 <?php 
 class Page{
+    public $isSecurePage=true;
 
 
     function __construct(){
@@ -7,6 +8,25 @@ class Page{
         $this->title=DEFAULT_TITLE;
     }
 
+    function processSecurity(){
+        if($this->isSecurePage)
+        {
+            if(is_userloggedIn() )
+            {
+                // Do nothing
+            }else{
+                header("location:login.php");
+                exit();
+          
+            }
+        }else
+        {
+           // die("I am at line  ".__LINE__ . " in file ". __FILE__);
+            // Do Nothing.
+             }
+       
+
+    }
 
     function getHeader(){
         ob_start();
@@ -49,6 +69,7 @@ return ob_get_clean();
     }
 
     function makePage(){
+        $this->processSecurity();
 
         $PageHead= $this->getHead();
         $PageHeader=$this->getHeader();

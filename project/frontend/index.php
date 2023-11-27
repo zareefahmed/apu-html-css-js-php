@@ -1,7 +1,9 @@
 <?php
 require_once("config.php");
 $page=new Page();
+$page->isSecurePage=false;
 $page->setTitle("My Home page for CarRental.com");
+
 ob_start();
 ?>
 

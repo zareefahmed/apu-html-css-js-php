@@ -1,6 +1,7 @@
 <?php
 require_once("config.php");
 $page=new Page();
+$page->isSecurePage=false;
 $page->setTitle("Login : CarRental.com");
 ob_start();
 ?>
@@ -9,22 +10,45 @@ ob_start();
     UserName <input type="text" id="username" name="username">
     Password <input type="password" id="password" name="password">
     <button onclick="checkLogin()"> Login</button>
-
+<div id="errors"></div>
     <script>
         function checkLogin(){
 
 username=document.getElementById("username").value;
 password=document.getElementById("password").value;
-console.log(username);
-console.log(password);
+//console.log(username);
+//console.log(password);
 
 $.ajax({
 url: "http://api.carrental.com",
 type: "POST",
-data:{ username: username, password: password }})
+data:{action:"login" ,username: username, password: password }})
 .done(
 function(response) {
-$('#result').text(response);
+    response_obj=JSON.parse(response);
+    if(response_obj.status=="failure")
+    {
+        $('#errors').text(response_obj.message);
+
+    }
+
+    if(response_obj.status=="success")
+    {
+//        document.cookie
+username=response_obj.username;
+// !!!!!! NEVER NEVER NEVER EVER use this method for security in production. This is only for demonstration purpose of using cookies.
+
+        document.cookie = "username="+username;
+
+        window.location="dashboard.php";
+
+
+        //$('#errors').text(response_obj.message);
+
+    }
+
+
+
 });
 }
 </script>

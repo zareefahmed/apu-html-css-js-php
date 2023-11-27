@@ -1,6 +1,8 @@
 <?php
 require_once("config.php");
 $page=new Page();
+$page->isSecurePage=false;
+
 $page->setTitle("Contact : CarRental.com");
 ob_start();
 ?>
