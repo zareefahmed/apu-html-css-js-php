@@ -62,6 +62,7 @@ main {
     padding: 1rem;
 }
 
+input{display:block}
 footer {
     background-color: #333;
     color: white;
