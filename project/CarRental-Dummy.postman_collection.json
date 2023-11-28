@@ -65,6 +65,104 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response has the required fields\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.version).to.exist.and.to.be.a('string');\r",
+							"    pm.expect(responseData.status).to.exist.and.to.be.a('string');\r",
+							"    pm.expect(responseData.action).to.exist.and.to.be.a('string');\r",
+							"    pm.expect(responseData.message).to.exist.and.to.be.a('string');\r",
+							"    pm.expect(responseData.username).to.exist.and.to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Version is a non-empty string\", function () {\r",
+							"  const responseData = pm.response.json();\r",
+							"\r",
+							"  pm.expect(responseData.version).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Status is a non-empty string\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.status).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Action is a non-empty string\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.action).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Action should not be empty\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "action",
+							"value": "register",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "zareef3",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "zareef@zareef.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "zareef",
+							"type": "text"
+						},
+						{
+							"key": "fullname",
+							"value": "Zareef Ahmed",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.carrental.com",
+					"protocol": "http",
+					"host": [
+						"api",
+						"carrental",
+						"com"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
