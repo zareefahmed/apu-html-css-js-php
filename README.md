@@ -17,20 +17,20 @@ Code samples in this repository have been used to teach HTML, CSS, Javascript, a
 |6  |Styling HTML5 by using CSS3                               |3  |    Completed   
 |7  |Creating Objects and Methods by Using Javascript         |3  |     Completed  
 |8  |Creating Interactive Pages Using HTML5 APIs               |3  |      Completed 
-|9  |Adding Offline Support to Web Applications                 |4  |  
+|9  |Adding Offline Support to Web Applications                 |4  |   Completed  
 |10 |Implementing an Adaptive User Interface                   |4  |     Completed  
 |11 |Creating Advanced Graphics                                |4  |      Completed 
-|12 |Animate the User Interface                                 |5  |      
-|13 |Implementing Real-Time Communication by using Web Sockets  |5  |      
-|14 |Creating a Web Worker Process                             |6  |      
-|15 |History of PHP                                             |6  |      
-|16 |PHP Language Basics                                        |6  |   
-|17 |PHP Variables                                             |6  |      
-|18 |Control Structures                                         |7  |      
-|19 |Regular Expressions                                      |7  |      
-|20 |PHP Functions                                             |7  |      
-|21 |PHP Object Oriented                                      |8  |      
-|22 |PHP and Pear                                               |8  |      
+|12 |Animate the User Interface                                 |5  |       Completed  
+|13 |Implementing Real-Time Communication by using Web Sockets  |5  |       Completed  
+|14 |Creating a Web Worker Process                             |6  |       Completed  
+|15 |History of PHP                                             |6  |       Completed  
+|16 |PHP Language Basics                                        |6  |    Completed  
+|17 |PHP Variables                                             |6  |       Completed  
+|18 |Control Structures                                         |7  |       Completed  
+|19 |Regular Expressions                                      |7  |       Completed  
+|20 |PHP Functions                                             |7  |       Completed  
+|21 |PHP Object Oriented                                      |8  |       Completed  
+|22 |PHP and Pear                                               |8  |       Completed  
 |   |                                                         |        |   |      
 
 
