@@ -1,6 +1,10 @@
 # HTML, CSS, Javascript, and PHP Training Sessions
-> **Warning**
+>**Warning**
 The session is currently ongoing, and the content may evolve as we delve deeper into the topic.
+
+>**Warning**
+Code samples in this repository have been used to teach HTML, CSS, Javascript, and PHP. The main purpose of these samples is to demonstrate the features of a specific language. Do not use these samples in your production code. Some of the samples may be incomplete as I may have asked learners to finish them.
+
 
  |ID |Topic                                                   |Day|Status|
 |---|---------------------------------------------------------|---|---|
