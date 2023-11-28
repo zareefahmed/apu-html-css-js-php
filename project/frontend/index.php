@@ -19,11 +19,14 @@ include("parts/searchbar.php");
 <script>
 
 function searchCars(){
+    var searchtext=document.getElementById('searchtext').value;
+    var searchcat=document.getElementById('searchcat').value;
+    //console.log("Search Cat :" +searchcat);
 
 $.ajax({
 url: "http://api.carrental.com",
 type: "POST",
-data:{action:"searchcar"}})
+data:{action:"searchcar",q:searchtext,cat:searchcat}})
 .done(
 function(response) {
     response_obj=JSON.parse(response);
@@ -36,10 +39,11 @@ function(response) {
     if(response_obj.status=="success")
     {
     
-        console.log(response_obj.results);
+      //  console.log(response_obj.results);
+        $('#listing').html("");
 
         response_obj.results.forEach(car => {
-                    console.log(car);
+                //    console.log(car);
                     const carRow = `
                         <div class="row">
                             <div class="cell">${car.id}</div>
@@ -61,7 +65,7 @@ function(response) {
 });
 }
 
-searchCars();
+//searchCars();
 </script>
 
 <?php 
