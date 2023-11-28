@@ -7,7 +7,11 @@ ob_start();
 ?>
 <h1> Dashboard Page
 </h1>
+<?php
 
+
+
+?>
 <?php 
 $PageContent=ob_get_clean();
 $page->setPageContent($PageContent);

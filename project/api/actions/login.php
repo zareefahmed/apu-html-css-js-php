@@ -17,8 +17,20 @@ $result=$db->conn->query($query);
 if($result->num_rows==1){
     // Login was success
     $status="success";
+
+    $secureinfo=array(
+        "username"=>$username
+    );
+    $toSecureInfo=serialize($secureinfo);
+    $toSecureInfoEncypted=encryptStringWithSalt($toSecureInfo,MY_SALT);
+
+   // var_dump($secureinfo);
+   // var_dump($toSecureInfo);
+
+    /// serialization  PHP objects to string
+
     $response=array(
-        "message"=>"success","username"=>$username
+        "message"=>"success","secureinfo"=>$toSecureInfoEncypted
      );
 
 }else{

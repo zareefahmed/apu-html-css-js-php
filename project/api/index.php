@@ -1,20 +1,33 @@
 <?php
 require_once("config.php");
-if(count($_POST)==0)
+//var_dump($_GET);
+if(count($_POST)==0 AND !isset($_GET['action']))
 {
     // Give no data to process.
     require_once("actions/notallowed.php");
     exit();
 }
 
-if(!isset($_POST['action']))
+if(!isset($_POST['action']) )
 {
     // If action is not present
+    if(!isset($_GET['action']) ){
+        
     require_once("actions/missingaction.php");
     exit();
+    }else
+    {
+        $action=$_GET['action'];
+
+    }
+    
+}else{
+    $action=$_POST['action'];
+
 }
 
-$action=$_POST['action'];
+
+
 define("ACTION",$action);
 
 if(file_exists("actions/$action.php"))

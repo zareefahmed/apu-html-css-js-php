@@ -35,12 +35,13 @@ function(response) {
     if(response_obj.status=="success")
     {
 //        document.cookie
-username=response_obj.username;
+secureinfo=response_obj.secureinfo;
+console.log(secureinfo);
 // !!!!!! NEVER NEVER NEVER EVER use this method for security in production. This is only for demonstration purpose of using cookies.
 
-        document.cookie = "username="+username;
+        document.cookie = "secureinfo="+secureinfo;
 
-        window.location="dashboard.php";
+        window.location="login_process.php";
 
 
         //$('#errors').text(response_obj.message);
