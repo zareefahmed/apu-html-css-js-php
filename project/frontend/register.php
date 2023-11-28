@@ -1,8 +1,9 @@
 <?php
 require_once("config.php");
 $page=new Page();
+$page->isSecurePage=false;
 
-$page->setTitle("Book : CarRental.com");
+$page->setTitle("Register : CarRental.com");
 ob_start();
 ?>
 <h1> Book the Car

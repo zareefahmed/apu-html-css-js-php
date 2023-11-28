@@ -49,7 +49,7 @@ function(response) {
                             <div class="cell">${car.id}</div>
                             <div class="cell">${car.title}</div>
                             <div class="cell">${car.details}</div>
-                            <div class="cell"><a href='book.php?carid=${car.id}'>Book It Now</a></div>
+                            <div class="cell"><a href='book.php?carid=${car.id}&rate=${car.rate}'>Book It Now</a></div>
                             
                         </div>
                     `;

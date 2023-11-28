@@ -14,6 +14,9 @@ if(!isset($_POST['username']) OR !isset($_POST['carid']) OR !isset($_POST['booki
 $username=$_POST['username'];
 $carid=$_POST['carid'];
 $bookingdate=$_POST['bookingdate'];
+//print strtotime($bookingdate);
+//2023-11-28 07:52:45	
+$bookingdate=date("Y-m-d h:i:s",$bookingdate);
 $startdate=$_POST['startdate'];
 $enddate=$_POST['enddate'];
 $rate=$_POST['rate'];
