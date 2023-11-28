@@ -4,6 +4,14 @@ $page=new Page();
 $page->isSecurePage=false;
 $page->setTitle("Login : CarRental.com");
 ob_start();
+// First type of pages: For anyone, be it guest or logged in users
+// Second type of pages: For only logged in users
+// Third type of pages: should only be available for guests.
+// Login and register are third type of pages.
+if(is_userloggedIn())
+{
+    header("location:dashboard.php");
+}
 ?>
 <h1> Login</h1>
 

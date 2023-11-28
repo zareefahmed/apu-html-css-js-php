@@ -1,6 +1,14 @@
 <?php
 require_once("config.php");
+///$rawdata = file_get_contents("php://input");
+//var_dump($rawdata);
+//$rawdata=(array)json_decode($rawdata);
+//var_dump($rawdata);
+//$_POST=$rawdata;
+//$_POST['action']="";
+//var_dump($_POST);
 //var_dump($_GET);
+
 if(count($_POST)==0 AND !isset($_GET['action']))
 {
     // Give no data to process.

@@ -5,15 +5,16 @@ $page->isSecurePage=false;
 
 $page->setTitle("Register : CarRental.com");
 ob_start();
+if(is_userloggedIn())
+{
+    header("location:dashboard.php");
+}
 ?>
 <h1> Book the Car
 </h1>
 <div id="bookingform">
-<?php
-if(isset($_GET['carid'])){
-$carid=$_GET['carid'];
-?>
 
+Make this page your registration page. 
 
 Calendar Field : For Start Date, For End Date and Comments section 
 Form should not create or call makebooking if all the above information is not provided.
@@ -31,12 +32,6 @@ Let's use hidden fields, in production, you can use processing via PHP on server
 <textarea id="comments"> Please write your specific instructions here</textarea>
 <br>
 <button onclick='makeBooking()'>Confirm </button>
-<?php 
-}else{
-    print "Car ID was not provided.";
-}
-
-?>
 </div>
 <script>
     function makeBooking(){

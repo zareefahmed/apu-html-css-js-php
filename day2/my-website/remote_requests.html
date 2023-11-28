@@ -8,6 +8,9 @@
 <body>
 
 <button onclick="makeGETRequest()">GET Request</button>
+<button onclick="makeGETCarsCat()">GET Categories for Car</button>
+<button onclick="makeGETCars()">GET Cars</button>
+
 <button onclick="makePOSTRequest()">POST Request</button>
 <button onclick="makePUTRequest()">PUT Request</button>
 <button onclick="makeDELETERequest()">DELETE Request</button>
@@ -18,7 +21,7 @@
     function makeGETRequest() {
         var xhr = new XMLHttpRequest();
 
-        xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
+        xhr.open('GET', 'http://carrental.com/api/users', true);
         xhr.onreadystatechange = function() {
            // console.log(xhr);
 
@@ -31,6 +34,24 @@
         xhr.send();
     }
 
+    function makeGETCarsCat() {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'http://carrental.com/api/carscat', true);
+        xhr.onreadystatechange = function() {
+           // console.log(xhr);
+
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                document.getElementById("response").value = JSON.stringify(data, null, 2);
+            }
+        };
+
+        xhr.send();
+    }
+
+    
+
     function makePOSTRequest() {
         var xhr = new XMLHttpRequest();
         var data = {
@@ -39,7 +60,7 @@
             userId: 1
         };
 
-        xhr.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);
+        xhr.open('POST', 'http://carrental.com/api/posts', true);
         xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 201) {
@@ -51,6 +72,30 @@
         xhr.send(JSON.stringify(data));
     }
 
+
+    
+
+    function makeGETCars() {
+        console.log("I was called");
+        var xhr = new XMLHttpRequest();
+        var data = {
+            action: 'searchcar',
+            body: 'bar',
+            userId: 1
+        };
+
+        xhr.open('POST', 'http://api.carrental.com', true);
+        //xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                document.getElementById("response").value=xhr.responseText;
+                //var response = JSON.parse(xhr.responseText);
+                //document.getElementById("response").value = JSON.stringify(response, null, 2);
+            }
+        };
+
+        xhr.send(JSON.stringify(data));
+    }
     function makePUTRequest() {
         var xhr = new XMLHttpRequest();
         var data = {
@@ -60,7 +105,7 @@
             userId: 1
         };
 
-        xhr.open('PUT', 'https://jsonplaceholder.typicode.com/posts/1', true);
+        xhr.open('PUT', 'http://carrental.com/api/posts/1', true);
         xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 200) {
@@ -75,7 +120,7 @@
     function makeDELETERequest() {
         var xhr = new XMLHttpRequest();
 
-        xhr.open('DELETE', 'https://jsonplaceholder.typicode.com/posts/1', true);
+        xhr.open('DELETE', 'http://carrental.com/api/posts/1', true);
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 document.getElementById("response").value = "Successfully deleted!";

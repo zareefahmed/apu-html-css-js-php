@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "28d55047-ccf7-470a-ba41-f7f9a8b4c836",
+		"name": "CarRental-Dummy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12741352"
+	},
+	"item": [
+		{
+			"name": "getCars",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "action",
+							"value": "searchcar",
+							"type": "text"
+						},
+						{
+							"key": "q",
+							"value": "a",
+							"type": "text"
+						},
+						{
+							"key": "cat",
+							"value": "sedan",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.carrental.com",
+					"protocol": "http",
+					"host": [
+						"api",
+						"carrental",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCarsCat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.carrental.com?action=carcat",
+					"protocol": "http",
+					"host": [
+						"api",
+						"carrental",
+						"com"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "carcat"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
